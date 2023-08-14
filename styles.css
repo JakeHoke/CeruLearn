@@ -7,6 +7,7 @@
 }
 header{
     background-color: #24252a;
+    height: 15vh;
 }
 
 li, a, button{
@@ -35,7 +36,7 @@ li, a, button{
 .name{
     margin-left: 10px;
     font-size: 30px;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; 
 }
 .name:hover{
     color: rgba(0, 136, 169, 1);
@@ -61,4 +62,106 @@ li, a, button{
     background-color: white;
     color: black;
     border: solid white;
+}
+
+
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #23E3C9;
+    height: 70vh;
+}
+.slideshow{
+    width: 800px; 
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+} 
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+
+
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.manual-btn{
+    border: 2px solid #40d3dc;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{  
+    background: #40d3dc;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;  
+}
+#radio2:checked ~ .first{
+    margin-left: -20%; 
+}
+#radio3:checked ~ .first{
+    margin-left: -40%; 
+}
+#radio4:checked ~ .first{
+    margin-left: -60%; 
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.navigation-auto div{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #40b3dc;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #40b3dc;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #40b3dc;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #40b3dc;
 }
