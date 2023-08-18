@@ -1,49 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-header{
-    background-color: #24252a;
-    height: 15vh;
-}
 
-li, a, button{
+
+li, a, button, .slogan{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #ecf0f1;
     text-decoration: none;
 }
-
-.navbar{
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 2%;
+    background-color: black;
+    height: 10vh;
+    padding: 20px 1%;
 }
-.title{
-    margin-left: 1px; 
-    display: flex;
+
+.slogan{
+    align-items: center;
+    font-weight: 700;
+    font-size: 30px;
+}
+.logoImage{
+    width: 26.02296875%;
 }
 .logo{
-    margin-left: -10px;
-    margin-top: -25px;
-    width: 150px;
+    width: 300px;
     cursor: pointer;
+    margin-left: -9%;
 }
 .navbar-links{
     list-style: none;
-    margin-bottom: 30px;
 }
 .navbar-links li{
     display: inline-block;
     padding: 0px 10px; 
 }
 .nav-link-button{
-    padding: 15px 25px;
+    padding: 10px 20px;
     background-color: transparent;
     border: solid;
     border-radius: 10px;
@@ -51,14 +51,20 @@ li, a, button{
     transition: all 0.3s ease 0s;
     color: white;
 }
-
-.nav-link-button:hover{
-    background-color: white;
-    color: black;
-    border: solid white;
+.nav-link-small{
+    transition: all 0.3s ease 0s;
+    color: white;
 }
 
+.nav-link-button:hover{
+    background-color: #007ba7;
+    color: white;
+    border: solid #007ba7;
+}
 
+.nav-link-small:hover{
+    color: #007ba7;
+}
 
 .body{
     display: flex;
