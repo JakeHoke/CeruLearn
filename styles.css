@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 *{
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -18,7 +19,7 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    height: 10vh;
+    height:7vh;
     padding: 20px 1%;
 }
 
@@ -26,6 +27,9 @@ header{
     align-items: center;
     font-weight: 700;
     font-size: 30px;
+}
+.slogan span{
+    color: #007ba7;
 }
 .logoImage{
     width: 26.02296875%;
@@ -43,7 +47,7 @@ header{
     padding: 0px 10px; 
 }
 .nav-link-button{
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: transparent;
     border: solid;
     border-radius: 10px;
@@ -70,7 +74,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #23E3C9;
+    background: #9cbfcc;
     height: 70vh;
 }
 .slideshow{
@@ -107,7 +111,7 @@ header{
     justify-content: center;
 }
 .manual-btn{
-    border: 2px solid #40d3dc;
+    border: 2px solid #007ba7;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -119,7 +123,7 @@ header{
 }
 
 .manual-btn:hover{  
-    background: #40d3dc;
+    background: #007ba7;
 }
 
 #radio1:checked ~ .first{
@@ -144,7 +148,7 @@ header{
 }
 
 .navigation-auto div{
-    border: 2px solid #40D3DC;
+    border: 2px solid #007ba7;
     padding: 5px;
     border-radius: 10px;
     transition: 1s;
@@ -154,14 +158,27 @@ header{
     margin-right: 40px;
 }
 #radio1:checked ~ .navigation-auto .auto-btn1{
-    background: #40b3dc;
+    background: #007ba7;
 }
 #radio2:checked ~ .navigation-auto .auto-btn2{
-    background: #40b3dc;
+    background: #007ba7;
 }
 #radio3:checked ~ .navigation-auto .auto-btn3{
-    background: #40b3dc;
+    background: #007ba7;
 }
 #radio4:checked ~ .navigation-auto .auto-btn4{
-    background: #40b3dc;
+    background: #007ba7;
+}
+
+.missionStatement{
+    display: flex;
+    height: 20vh;
+    background-color:#f9f1f1;
+    justify-content: center;
+    align-items: center;
+}
+.statement{
+    text-align: center;
+    font-weight: 700;
+    font-size: 4rem;
 }
