@@ -1,10 +1,17 @@
-var counter = 2;
-radiobtn = document.getElementById("radio1");
-radiobtn.checked = true;
-setInterval(function hello(){
-    document.getElementById('radio' + counter).checked = true;
-    counter++;
-    if(counter > 4){
-        counter = 1;
-    }
-}, 5000)
+const buttons = document.querySelectorAll("[data-carousel-button]")
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const offset = button.dataset.carouselButton === "next" ? 1 : -1
+        console.log(offset);
+        const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
+        const activeSlide = slides.querySelector("[data-active]")
+        let newIndex = [...slides.children].indexOf(activeSlide) + offset
+        if (newIndex < 0) newIndex = slides.children.length - 1
+        if (newIndex >= slides.children.length) newIndex = 0
+        
+
+        slides.children[newIndex].dataset.active = true
+        delete activeSlide.dataset.active
+    })
+});
