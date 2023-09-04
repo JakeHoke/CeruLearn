@@ -79,9 +79,12 @@
         
         // Initialize index
         let index = 0;
+
+        // Store the interval ID
+        let intervalId;
         
         // Function to change the image and text
-        function changeContent() {
+        async function changeContent() {
             // Get the image and text elements
             const imageElement = document.querySelector('.carousel img');
             const textElement = document.getElementById('Ending');
@@ -107,8 +110,34 @@
             index = (index + 1) % images.length;  // Loop back to 0 when reaching the end
         }
         
-        // Change the content every 3 seconds
-        setInterval(changeContent, 5000);
+        // Function to start a new interval
+        function startInterval() {
+            clearInterval(intervalId);  // Clear existing interval
+            intervalId = setInterval(changeContent, 5000);  // Start a new interval
+        }
+        
+        // Initialize as visible and start the interval
+        document.addEventListener("DOMContentLoaded", function() {
+            const imageElement = document.querySelector('.carousel img');
+            const textElement = document.getElementById('Ending');
+            imageElement.classList.add('visible');
+            textElement.classList.add('visible');
+        
+            // Start the initial interval
+            startInterval();
+        });
+        
+        // Add event listeners for buttons
+        document.getElementByClassName('prev').addEventListener('click', function() {
+            index = (index - 2 + images.length) % images.length;  // Move to the previous slide
+            changeContent();
+            startInterval();  // Reset the interval
+        });
+        
+        document.getElementByClassName('next').addEventListener('click', function() {
+            changeContent();  // Move to the next slide
+            startInterval();  // Reset the interval
+        });
     </script>
 
 <style id="__web-inspector-hide-shortcut-style__">
