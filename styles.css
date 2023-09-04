@@ -33,6 +33,16 @@ header{
 .slogan span{
     color: #58b0e0;
 }
+
+.title{
+    align-items: center;
+    font-weight: 700;
+    font-size: 30px;
+    color: #474B4E;
+}
+.title span{
+    color: #58b0e0;
+}
 .logoImage{
     width: 470px;
 }
