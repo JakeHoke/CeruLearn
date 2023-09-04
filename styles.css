@@ -39,10 +39,12 @@ header{
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 30px;
-    color: #474B4E;
 }
-.title span{
+.title #Endless{
     color: #58b0e0;
+}
+.title #Ending{
+    color: #474B4E;
 }
 .logoImage{
     width: 470px;
