@@ -15,11 +15,14 @@ li, a, button, .slogan{
 }
 header{
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     background-color: black;
     height: 7vh;
     padding: 20px 0.2%;
+    box-shadow: 0 10px 9px rgba(0, 0, 0, 0.3);
+    z-index: 100;
 }
 
 .slogan{
@@ -28,7 +31,7 @@ header{
     font-size: 30px;
 }
 .slogan span{
-    color: #007ba7;
+    color: #58b0e0;
 }
 .logoImage{
     width: 470px;
@@ -57,22 +60,39 @@ header{
     transition: all 0.3s ease 0s;
     color: white;
 }
+.nav-link-button-sign{
+    padding: 5px 15px;
+    background-color: #58b0e0;
+    border: solid #58b0e0;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+}
 .nav-link-small{
     transition: all 0.3s ease 0s;
     color: white;
 }
+.nav-link-button-sign:hover {
+    background-color: #16a1eb;
+    color: white;
+    border: solid #16a1eb;
+}
 
 .nav-link-button:hover{
-    background-color: #007ba7;
+    background-color: #58b0e0;
     color: white;
-    border: solid #007ba7;
+    border: solid #58b0e0;
 }
 
 .nav-link-small:hover{
-    color: #007ba7;
+    color: #58b0e0;
 }
 
 .body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     height: 93vh;
 }
@@ -105,7 +125,7 @@ header{
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: center;
 }
 .carousel-button{
@@ -148,4 +168,72 @@ header{
     text-align: center;
     font-weight: 700;
     font-size: 4rem;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.image_container{
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 70%;
+    height: 90vh;
+    background-color: #FAF9F6;
+}
+.image_container img{
+    max-width: 100%;
+    border-radius: 20px;
+    border: 10px solid #58b0e0;
+    margin: 60px;
+}
+.list_container{
+    float: left;
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.list_container img{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+.list {
+    margin-left: 10%;
+}
+.list li{
+    color: black;
+    font-size: 175%;
+}
+.list li:not(:last-child){
+    margin-bottom: 55px;
+}
+.list li::marker{
+    color: #58b0e0;
+}
+
+.list_container button{
+    margin-bottom: 15%;
+    margin-top: 9%;
+    padding: 10px 20px;
+    background-color: #58b0e0;
+    border: solid #58b0e0;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+.list_container button:hover {
+    background-color: #16a1eb;
+    color: white;
+    border: solid #16a1eb;
 }
