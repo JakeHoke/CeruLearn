@@ -193,13 +193,13 @@ header{
     justify-content: center;
     align-items: center;
     margin: 0 20%;
-    padding: 10% 0;
+    padding: 7% 0;
 }
 .info2{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10% 20%;
+    padding: 7% 20%;
     background-color: #f7f9fa;
 }
 .image_container{
