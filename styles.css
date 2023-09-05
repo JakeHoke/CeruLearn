@@ -33,6 +33,19 @@ header{
 .slogan span{
     color: #58b0e0;
 }
+
+.title{
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+.title #Endless{
+    color: #58b0e0;
+}
+.title #Ending{
+    color: #474B4E;
+}
 .logoImage{
     width: 470px;
 }
@@ -311,19 +324,7 @@ header{
     color: white;
     border: solid #16a1eb;
 }
-.list_container_2 button{
-    margin-bottom: 15%;
-    margin-top: 9%;
-    padding: 10px 20px;
-    background-color: transparent;
-    border: solid black;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    color: black;
-    margin-left: 10%;
-}
-.list_container_2 button:hover {
+.list_container button:hover {
     background-color: #16a1eb;
     color: white;
     border: solid #16a1eb;
