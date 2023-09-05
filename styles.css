@@ -160,7 +160,7 @@ header{
     font-family: "Montserrat", sans-serif;
     display: flex;
     height: 20vh;
-    background-color:#f9f1f1;
+    background-color:white;
     justify-content: center;
     align-items: center;
 }
@@ -174,28 +174,47 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 10%;
+    margin: 0 20%;
 }
 .info2{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 10%;
-    margin-left: 15%;
+    padding: 0 20%;
+    background-color: #f7f9fa;
 }
 .image_container{
     float: left;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-basis: 70%;
+    flex-basis: 50%;
+    width: 50%;
     height: 90vh;
+    padding-left: 10%;
 }
-
+.image_container_2 {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50%;
+    width: 50%;
+    height: 90vh;
+    padding-right: 10%;
+}
+.image_container_2 img{
+    height: 500px;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 5px solid #58b0e0;
+    margin: 60px;
+}
 .image_container img{
-    max-width: 600px;
-    border-radius: 20px;
-    border: 10px solid #58b0e0;
+    height: 500px;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 5px solid #58b0e0;
     margin: 60px;
 }
 .list_container{
@@ -207,38 +226,104 @@ header{
     justify-content: center;
     flex-wrap: wrap;
 }
-.list_container img{
-    display: block;
-    margin: 0 auto;
-    width: 200px;
+.list_container_2{
+    float: left;
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.list_container h1{
+    margin-bottom: 7%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #474b4e;
+    font-size: 3.2rem;
+    text-align: left;
+    width: 100%;
+}
+.list_container_2 h1{
+    margin-bottom: 7%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #474b4e;
+    font-size: 3.2rem;
+    text-align: left;
+    width: 100%;
+    padding-left: 10%;
 }
 .list {
-    margin-left: 10%;
-    font-size: .7rem;
+    font-size: .6rem;
+    font-weight: 400;
+    padding-right: 10%;
+}
+.list_2 {
+    font-size: .6rem;
+    font-weight: 400;
+    padding-left: 10%;
+}
+.list ul{
+    margin-left: 0;
+    padding-left: 0;
 }
 .list li{
     color: black;
     font-size: 175%;
+    margin-left: 1em;
 }
 .list li:not(:last-child){
-    margin-bottom: 55px;
+    margin-bottom: 6%;
 }
 .list li::marker{
     color: #58b0e0;
 }
-
+.list_2 ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+.list_2 li{
+    color: black;
+    font-size: 175%;
+    margin-left: 1em;
+}
+.list_2 li:not(:last-child){
+    margin-bottom: 6%;
+}
+.list_2 li::marker{
+    color: #58b0e0;
+}
 .list_container button{
     margin-bottom: 15%;
     margin-top: 9%;
     padding: 10px 20px;
-    background-color: #58b0e0;
-    border: solid #58b0e0;
-    border-radius: 7px;
+    background-color: transparent;
+    border: solid black;
+    border-radius: 2px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    color: white;
+    color: black;
+    margin-right: 10%;
 }
 .list_container button:hover {
+    background-color: #16a1eb;
+    color: white;
+    border: solid #16a1eb;
+}
+.list_container_2 button{
+    margin-bottom: 15%;
+    margin-top: 9%;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: solid black;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: black;
+    margin-left: 10%;
+}
+.list_container_2 button:hover {
     background-color: #16a1eb;
     color: white;
     border: solid #16a1eb;
