@@ -125,18 +125,27 @@
         
             // Start the initial interval
             startInterval();
-        });
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
         
-        // Add event listeners for buttons
-        document.querySelector('.prev').addEventListener('click', function() {
-            index = (index - 2 + images.length) % images.length;  // Move to the previous slide
-            changeContent();
-            startInterval();  // Reset the interval
-        });
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    index = (index - 2 + images.length) % images.length;
+                    changeContent();
+                    startInterval();
+                });
+            } else {
+                console.log("Element with class '.prev' not found.");
+            }
         
-        document.querySelector('.next').addEventListener('click', function() {
-            changeContent();  // Move to the next slide
-            startInterval();  // Reset the interval
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    changeContent();
+                    startInterval();
+                });
+            } else {
+                console.log("Element with class '.next' not found.");
+            }
         });
     </script>
 
