@@ -128,13 +128,13 @@
         });
         
         // Add event listeners for buttons
-        document.getElementByClassName('prev').addEventListener('click', function() {
+        document.getElementsByClassName('prev').addEventListener('click', function() {
             index = (index - 2 + images.length) % images.length;  // Move to the previous slide
             changeContent();
             startInterval();  // Reset the interval
         });
         
-        document.getElementByClassName('next').addEventListener('click', function() {
+        document.getElementsByClassName('next').addEventListener('click', function() {
             changeContent();  // Move to the next slide
             startInterval();  // Reset the interval
         });
