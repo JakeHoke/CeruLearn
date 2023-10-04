@@ -11,6 +11,14 @@
         
         // Array of texts
         const texts = ["Differentiation", "Reach", "Education"];
+
+        // Array of Bullet One
+        const numOne = ["CeruAds","Spread Your Knowledge","Business Skills"]
+        // Array of Bullet Two
+        const numTwo= ["Educator Interaction","Build a Brand","Academic Help"]
+        // Array of Bullet Three
+        const numThree = ["Free Content","Make an Impact","Personal Finance"]
+        
         
         // Initialize index
         let index = 0;
@@ -31,7 +39,9 @@
             // Hide the current content
             imageElement.classList.add('hidden');
             textElement.classList.add('hidden');
-            bulletedList.classList.add('hidden');
+            Array.from(bulletedList.children).forEach(child => {
+                child.classList.add('hidden');
+            });
             
 
             // Wait for the transition to complete
@@ -40,12 +50,22 @@
             // Change the image and text
             imageElement.src = images[index];
             textElement.textContent = texts[index];
+            bulletOne.textContent = numOne[index];
+            bulletTwo.textContent = numTwo[index];
+            bulletThree.textContent = numThree[index];
 
             // Show the new content
             imageElement.classList.remove('hidden');
             textElement.classList.remove('hidden');
+            Array.from(bulletedList.children).forEach(child => {
+                child.classList.remove('hidden');
+            });
+            
             imageElement.classList.add('visible');
             textElement.classList.add('visible');
+            Array.from(bulletedList.children).forEach(child => {
+                child.classList.add('visible');
+            });
         
             // Update index for the next iteration
             index = (index + 1) % images.length;  // Loop back to 0 when reaching the end
