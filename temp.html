@@ -23,10 +23,16 @@
             // Get the image and text elements
             const imageElement = document.querySelector('.carousel img');
             const textElement = document.getElementById('Ending');
+            const bulletedList = document.querySelectorAll('.title li');
+            const bulletOne = bulletedList[0];
+            const bulletTwo = bulletedList[1];
+            const bulletThree = bulletedList[2];
 
             // Hide the current content
             imageElement.classList.add('hidden');
             textElement.classList.add('hidden');
+            bulletedList.classList.add('hidden');
+            
 
             // Wait for the transition to complete
             await new Promise(resolve => setTimeout(resolve, 200));
