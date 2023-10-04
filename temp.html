@@ -39,7 +39,7 @@
             // Hide the current content
             imageElement.classList.add('hidden');
             textElement.classList.add('hidden');
-            Array.from(bulletedList.children).forEach(child => {
+            bulletedList.forEach(child => {
                 child.classList.add('hidden');
             });
             
@@ -57,7 +57,7 @@
             // Show the new content
             imageElement.classList.remove('hidden');
             textElement.classList.remove('hidden');
-            Array.from(bulletedList.children).forEach(child => {
+            bulletedList.forEach(child => {
                 child.classList.remove('hidden');
             });
             
