@@ -6,6 +6,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 </head>
 <body>
+        
+    <input type="file" id="fileInput" accept=".mp4">
+    <button onclick="uploadVideo()">Upload and Convert to Blob</button>
+    
+    <video controls width="400" id="videoPlayer"></video>
+    
+    <script>
+        async function uploadVideo() {
+            const fileInput = document.getElementById('fileInput');
+            const videoFile = fileInput.files[0];
+            
+            const formData = new FormData();
+            formData.append('file', videoFile);
+            
+            const response = await fetch('http://127.0.0.1:5000/upload', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+            
+            const videoBlob = new Blob([new Uint8Array(data.blob.split('').map(char => char.charCodeAt(0)))], { type: 'video/mp4' });
+            const blobURL = URL.createObjectURL(videoBlob);
+            
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = blobURL;
+        }
+    </script>
+        
     <script>
         const SECRET_KEY = "16_byte_secrt_ky";
     
