@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch API Client</title>
+</head>
+<body>
+    <script>
+        async function sendData() {
+            // Sample data as string for demonstration purposes
+            const dataStr = "Hello, Server!";
+            
+            // Encrypt the data using a simple algorithm (e.g., AES)
+            const secretKey = "16_byte_secret_ky";  // Must match server's key
+            const encryptedData = btoa(dataStr);  // Simulating encryption for simplicity
+
+            // Send encrypted blob to the server
+            const response = await fetch('http://cerubase.cerulearnadmin.repl.co/data', {
+                method: 'POST',
+                body: new Blob([encryptedData])
+            });
+
+            const result = await response.json();
+            console.log(result);
+        }
+
+        // Send data when the page loads
+        window.onload = sendData;
+    </script>
+</body>
+</html>
