@@ -8,32 +8,53 @@
 <body>
     <script>
         const SECRET_KEY = "16_byte_secrt_ky";
-
+    
         function encryptAES(plainText, key) {
+            console.log('Starting encryption...');
+            
             const iv = CryptoJS.lib.WordArray.random(128 / 8);
+            console.log('Generated IV:', iv.toString(CryptoJS.enc.Hex));
+    
             const encrypted = CryptoJS.AES.encrypt(plainText, CryptoJS.enc.Utf8.parse(key), { iv: iv });
-            return iv.toString(CryptoJS.enc.Base64) + encrypted.toString();
+            console.log('Encrypted text:', encrypted.toString());
+    
+            const combinedData = iv.toString(CryptoJS.enc.Base64) + encrypted.toString();
+            console.log('Combined data (IV + encrypted):', combinedData);
+    
+            return combinedData;
         }
-
+    
         async function sendData() {
             const dataStr = "Hello, Server!";
-            
+            console.log('Original data:', dataStr);
+    
             // Encrypt the data using AES and CryptoJS
             const encryptedData = encryptAES(dataStr, SECRET_KEY);
-            console.log(encryptedData);
-
+            console.log('Sending encrypted data:', encryptedData);
+    
             // Send encrypted blob to the server
-            const response = await fetch('https://cerubase.cerulearnadmin.repl.co/data', {
-                method: 'POST',
-                body: encryptedData
-            });
-
-            const result = await response.json();
-            console.log(result);
+            try {
+                const response = await fetch('https://cerubase.cerulearnadmin.repl.co/data', {
+                    method: 'POST',
+                    body: encryptedData
+                });
+    
+                if (!response.ok) {
+                    console.error('Server responded with an error status:', response.status);
+                }
+    
+                const result = await response.json();
+                console.log('Server response:', result);
+            } catch (error) {
+                console.error('Error occurred while sending/receiving data:', error);
+            }
         }
-
+    
         // Send data when the page loads
-        window.onload = sendData;
+        window.onload = () => {
+            console.log('Page loaded. Initiating sendData...');
+            sendData();
+        };
     </script>
 </body>
 </html>
