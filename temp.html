@@ -25,10 +25,10 @@
                 body: formData
             });
             const data = await response.json();
-            
+            console.log("Data Recived");
             const videoBlob = new Blob([new Uint8Array(data.blob.split('').map(char => char.charCodeAt(0)))], { type: 'video/mp4' });
             const blobURL = URL.createObjectURL(videoBlob);
-            
+            console.log("BlobURL: ", blobURL);
             const videoPlayer = document.getElementById('videoPlayer');
             videoPlayer.src = blobURL;
         }
