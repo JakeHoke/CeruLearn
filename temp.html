@@ -7,28 +7,21 @@
 </head>
 <body>
         
-    <input type="file" id="fileInput" accept=".mp4">
-    <button onclick="uploadVideo()">Upload and Convert to Blob</button>
+    
+    <button onclick="streamVideo()">Stream Video as Blob</button>
     
     <video controls width="400" id="videoPlayer"></video>
-    
+
     <script>
-        async function uploadAndStreamVideo() {
-            const fileInput = document.getElementById('fileInput');
-            const videoFile = fileInput.files[0];
-            
-            const formData = new FormData();
-            formData.append('file', videoFile);
-            
-            const response = await fetch('https://cerubase.cerulearnadmin.repl.co/upload', {
-                method: 'POST',
-                body: formData
-            });
+        async function streamVideo() {
+            const response = await fetch('https://cerubase.cerulearnadmin.repl.co/stream');
+            const videoData = await response.arrayBuffer();
     
-            if (response.ok) {
-                const videoPlayer = document.getElementById('videoPlayer');
-                videoPlayer.src = response.url;
-            }
+            const blob = new Blob([videoData], { type: 'video/mp4' });
+            const url = URL.createObjectURL(blob);
+    
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = url;
         }
     </script>
         
