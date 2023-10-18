@@ -10,27 +10,18 @@
         const SECRET_KEY = "16_byte_secrt_ky";
     
         function encryptAES(plainText, key) {
-            console.log('Starting encryption...');
-            
             const iv = CryptoJS.lib.WordArray.random(128 / 8);
-            console.log('Generated IV:', iv.toString(CryptoJS.enc.Hex));
-    
             const encrypted = CryptoJS.AES.encrypt(plainText, CryptoJS.enc.Utf8.parse(key), { iv: iv });
-            console.log('Encrypted text:', encrypted.toString());
-    
             const combinedData = iv.toString(CryptoJS.enc.Base64) + ":" + encrypted.toString();
-            console.log('Combined data (IV + encrypted):', combinedData);
     
             return combinedData;
         }
     
         async function sendData() {
             const dataStr = "Hello, Server!";
-            console.log('Original data:', dataStr);
     
             // Encrypt the data using AES and CryptoJS
             const encryptedData = encryptAES(dataStr, SECRET_KEY);
-            console.log('Sending encrypted data:', encryptedData);
     
             // Send encrypted blob to the server
             try {
@@ -55,7 +46,6 @@
     
         // Send data when the page loads
         window.onload = () => {
-            console.log('Page loaded. Initiating sendData...');
             sendData();
         };
     </script>
