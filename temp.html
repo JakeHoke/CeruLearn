@@ -36,6 +36,9 @@
             try {
                 const response = await fetch('https://cerubase.cerulearnadmin.repl.co/data', {
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain'
+                    },
                     body: encryptedData
                 });
     
