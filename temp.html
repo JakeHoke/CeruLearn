@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Fetch API Client</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 </head>
 <body>
     <script>
+        const SECRET_KEY = "16_byte_secrt_ky";
+
+        function encryptAES(plainText, key) {
+            const iv = CryptoJS.lib.WordArray.random(128 / 8);
+            const encrypted = CryptoJS.AES.encrypt(plainText, CryptoJS.enc.Utf8.parse(key), { iv: iv });
+            return iv.toString(CryptoJS.enc.Base64) + encrypted.toString();
+        }
+
         async function sendData() {
-            // Sample data as string for demonstration purposes
             const dataStr = "Hello, Server!";
             
-            // Encrypt the data using a simple algorithm (e.g., AES)
-            const secretKey = "16_byte_secrt_ky";  // Must match server's key
-            const encryptedData = btoa(dataStr);  // Simulating encryption for simplicity
+            // Encrypt the data using AES and CryptoJS
+            const encryptedData = encryptAES(dataStr, SECRET_KEY);
 
             // Send encrypted blob to the server
             const response = await fetch('https://cerubase.cerulearnadmin.repl.co/data', {
                 method: 'POST',
-                body: new Blob([encryptedData])
+                body: encryptedData
             });
 
             const result = await response.json();
